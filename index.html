@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central do Bisno</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #0b0b0b;
+            color: white;
+        }
+
+        header {
+            background: #111;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #f5b400;
+        }
+
+        .hero p {
+            max-width: 700px;
+            color: #ccc;
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #f5b400;
+            color: #111;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .section {
+            padding: 70px 8%;
+            text-align: center;
+            background: #111;
+        }
+
+        .section h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 12px;
+            width: 280px;
+            border: 1px solid #292929;
+        }
+
+        .card h3 {
+            color: #f5b400;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #bbb;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #080808;
+            color: #888;
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">CENTRAL DO BISNO</div>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero" id="inicio">
+    <h1>Central do <span>Bisno</span></h1>
+
+    <p>
+        Divulgação, publicidade e crescimento para negócios.
+        Ajudamos empresas a apresentarem os seus produtos e serviços
+        para mais pessoas.
+    </p>
+
+    <a class="btn" href="#contacto">Quero divulgar meu negócio</a>
+</section>
+
+<section class="section" id="servicos">
+    <h2>O que fazemos</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Divulgação</h3>
+            <p>
+                Divulgamos negócios, produtos e serviços
+                através de estratégias de publicidade.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Fotografia & Vídeo</h3>
+            <p>
+                Criamos conteúdos visuais para apresentar
+                melhor a sua empresa e os seus produtos.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Publicidade</h3>
+            <p>
+                Ajudamos o seu negócio a alcançar novos
+                clientes e aumentar a sua presença.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section" id="contacto">
+    <h2>Vamos trabalhar juntos?</h2>
+
+    <p style="color:#bbb; margin:20px 0 30px;">
+        Entre em contacto com a Central do Bisno.
+    </p>
+
+    <a class="btn" href="https://wa.me/" target="_blank">
+        Falar connosco
+    </a>
+</section>
+
+<footer>
+    © 2026 Central do Bisno — Todos os direitos reservados.
+</footer>
+
+</body>
+</html>
