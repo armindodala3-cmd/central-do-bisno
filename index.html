@@ -1,207 +1,453 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Central do Bisno</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Central do Bisno - Divulgação e crescimento para negócios.">
+  <title>Central do Bisno | Divulgação de Negócios</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-        body {
-            background: #0b0b0b;
-            color: white;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        header {
-            background: #111;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #222;
-        }
+    body {
+      background: #080808;
+      color: white;
+      line-height: 1.6;
+    }
 
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-        }
+    header {
+      background: #111;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #222;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-        }
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #ffd700;
+    }
 
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+    }
 
-        .hero h1 {
-            font-size: 55px;
-            margin-bottom: 20px;
-        }
+    nav a:hover {
+      color: #ffd700;
+    }
 
-        .hero h1 span {
-            color: #f5b400;
-        }
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 7%;
+      background:
+        linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.85)),
+        radial-gradient(circle at center, #333 0%, #080808 65%);
+    }
 
-        .hero p {
-            max-width: 700px;
-            color: #ccc;
-            font-size: 20px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
+    .hero-content {
+      max-width: 850px;
+    }
 
-        .btn {
-            display: inline-block;
-            background: #f5b400;
-            color: #111;
-            padding: 15px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 78px);
+      margin-bottom: 20px;
+    }
 
-        .section {
-            padding: 70px 8%;
-            text-align: center;
-            background: #111;
-        }
+    .hero h1 span {
+      color: #ffd700;
+    }
 
-        .section h2 {
-            font-size: 35px;
-            margin-bottom: 20px;
-        }
+    .hero p {
+      font-size: 20px;
+      color: #ddd;
+      margin-bottom: 35px;
+    }
 
-        .cards {
-            display: flex;
-            gap: 25px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #ffd700;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      margin: 5px;
+      transition: .3s;
+    }
 
-        .card {
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 12px;
-            width: 280px;
-            border: 1px solid #292929;
-        }
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255,215,0,.25);
+    }
 
-        .card h3 {
-            color: #f5b400;
-            margin-bottom: 15px;
-        }
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 1px solid #ffd700;
+    }
 
-        .card p {
-            color: #bbb;
-            line-height: 1.5;
-        }
+    section {
+      padding: 80px 7%;
+    }
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: #080808;
-            color: #888;
-        }
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
 
-        @media (max-width: 700px) {
-            .hero h1 {
-                font-size: 40px;
-            }
+    .section-title h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
 
-            nav {
-                display: none;
-            }
-        }
-    </style>
+    .section-title span {
+      color: #ffd700;
+    }
+
+    .section-title p {
+      color: #aaa;
+    }
+
+    .about {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      color: #ccc;
+      font-size: 18px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .card {
+      background: #111;
+      border: 1px solid #222;
+      padding: 30px 22px;
+      border-radius: 14px;
+      text-align: center;
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      border-color: #ffd700;
+    }
+
+    .card .icon {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #ffd700;
+    }
+
+    .card p {
+      color: #aaa;
+    }
+
+    .plans {
+      background: #0d0d0d;
+    }
+
+    .plan {
+      position: relative;
+    }
+
+    .plan h3 {
+      font-size: 24px;
+    }
+
+    .price {
+      font-size: 30px;
+      font-weight: bold;
+      margin: 15px 0;
+      color: white;
+    }
+
+    .plan ul {
+      list-style: none;
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    .plan li {
+      padding: 8px 0;
+      color: #ccc;
+    }
+
+    .plan li::before {
+      content: "✓ ";
+      color: #ffd700;
+      font-weight: bold;
+    }
+
+    .featured {
+      border: 2px solid #ffd700;
+      transform: scale(1.03);
+    }
+
+    .featured:hover {
+      transform: scale(1.03) translateY(-7px);
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      background: #111;
+      padding: 40px;
+      border-radius: 15px;
+      border: 1px solid #222;
+    }
+
+    .contact-box p {
+      color: #bbb;
+      margin-bottom: 25px;
+    }
+
+    footer {
+      background: #050505;
+      text-align: center;
+      padding: 30px 7%;
+      color: #777;
+      border-top: 1px solid #222;
+    }
+
+    footer strong {
+      color: #ffd700;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 7px;
+        font-size: 13px;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 60px 5%;
+      }
+
+      .featured {
+        transform: none;
+      }
+
+      .featured:hover {
+        transform: translateY(-7px);
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
+  <header>
     <div class="logo">CENTRAL DO BISNO</div>
 
     <nav>
-        <a href="#inicio">Início</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#contacto">Contacto</a>
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#planos">Planos</a>
+      <a href="#contacto">Contacto</a>
     </nav>
-</header>
+  </header>
 
-<section class="hero" id="inicio">
-    <h1>Central do <span>Bisno</span></h1>
+  <section class="hero" id="inicio">
+    <div class="hero-content">
+      <h1>Faça o seu negócio <span>ser visto.</span></h1>
 
-    <p>
-        Divulgação, publicidade e crescimento para negócios.
-        Ajudamos empresas a apresentarem os seus produtos e serviços
-        para mais pessoas.
-    </p>
+      <p>
+        A Central do Bisno ajuda empresas e empreendedores
+        a divulgar os seus negócios, alcançar novos clientes
+        e fortalecer a sua presença no mercado.
+      </p>
 
-    <a class="btn" href="#contacto">Quero divulgar meu negócio</a>
-</section>
+      <a class="btn" href="#contacto">Quero divulgar o meu negócio</a>
+      <a class="btn btn-outline" href="#servicos">Conhecer os serviços</a>
+    </div>
+  </section>
 
-<section class="section" id="servicos">
-    <h2>O que fazemos</h2>
+  <section id="sobre">
+    <div class="section-title">
+      <h2>Sobre a <span>Central do Bisno</span></h2>
+      <p>Conectamos negócios a novos clientes.</p>
+    </div>
+
+    <div class="about">
+      <p>
+        A Central do Bisno é uma empresa de divulgação de negócios.
+        Trabalhamos com diferentes formas de parceria e planos de
+        divulgação, ajudando marcas, empresas e empreendedores a
+        apresentarem os seus produtos e serviços para mais pessoas.
+      </p>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <div class="section-title">
+      <h2>O que <span>fazemos</span></h2>
+      <p>Soluções para aumentar a visibilidade do seu negócio.</p>
+    </div>
 
     <div class="cards">
 
-        <div class="card">
-            <h3>Divulgação</h3>
-            <p>
-                Divulgamos negócios, produtos e serviços
-                através de estratégias de publicidade.
-            </p>
-        </div>
+      <div class="card">
+        <div class="icon">📱</div>
+        <h3>Divulgação Digital</h3>
+        <p>
+          Promovemos negócios através das redes sociais
+          e canais digitais.
+        </p>
+      </div>
 
-        <div class="card">
-            <h3>Fotografia & Vídeo</h3>
-            <p>
-                Criamos conteúdos visuais para apresentar
-                melhor a sua empresa e os seus produtos.
-            </p>
-        </div>
+      <div class="card">
+        <div class="icon">📸</div>
+        <h3>Fotografia</h3>
+        <p>
+          Produção de fotografias para apresentar
+          produtos, serviços e empresas.
+        </p>
+      </div>
 
-        <div class="card">
-            <h3>Publicidade</h3>
-            <p>
-                Ajudamos o seu negócio a alcançar novos
-                clientes e aumentar a sua presença.
-            </p>
-        </div>
+      <div class="card">
+        <div class="icon">🎥</div>
+        <h3>Vídeos</h3>
+        <p>
+          Criamos conteúdos em vídeo para ajudar
+          a sua marca a chamar atenção.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">📈</div>
+        <h3>Promoção</h3>
+        <p>
+          Estratégias de divulgação para aumentar
+          o alcance e atrair potenciais clientes.
+        </p>
+      </div>
 
     </div>
-</section>
+  </section>
 
-<section class="section" id="contacto">
-    <h2>Vamos trabalhar juntos?</h2>
+  <section class="plans" id="planos">
+    <div class="section-title">
+      <h2>Escolha o seu <span>plano</span></h2>
+      <p>Encontre a melhor forma de trabalhar connosco.</p>
+    </div>
 
-    <p style="color:#bbb; margin:20px 0 30px;">
-        Entre em contacto com a Central do Bisno.
+    <div class="cards">
+
+      <div class="card plan">
+        <h3>Plano Básico</h3>
+        <div class="price">Sob consulta</div>
+
+        <ul>
+          <li>Divulgação do negócio</li>
+          <li>Publicação nas redes</li>
+          <li>Apresentação da empresa</li>
+        </ul>
+      </div>
+
+      <div class="card plan featured">
+        <h3>Plano Profissional</h3>
+        <div class="price">Sob consulta</div>
+
+        <ul>
+          <li>Divulgação ampliada</li>
+          <li>Conteúdo para redes sociais</li>
+          <li>Fotografia</li>
+          <li>Vídeos promocionais</li>
+        </ul>
+      </div>
+
+      <div class="card plan">
+        <h3>Parceria</h3>
+        <div class="price">Personalizado</div>
+
+        <ul>
+          <li>Modelo de parceria</li>
+          <li>Estratégia personalizada</li>
+          <li>Divulgação contínua</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="section-title">
+      <h2>Vamos fazer o seu negócio <span>crescer?</span></h2>
+      <p>Entre em contacto com a Central do Bisno.</p>
+    </div>
+
+    <div class="contact-box">
+      <p>
+        Quer divulgar a sua empresa, produto ou serviço?
+        Fale connosco para conhecer os planos e possibilidades
+        de parceria.
+      </p>
+
+      <a
+        class="btn"
+        href="https://wa.me/244000000000"
+        target="_blank"
+      >
+        Falar pelo WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      © 2026 <strong>Central do Bisno</strong>.
+      Todos os direitos reservados.
     </p>
-
-    <a class="btn" href="https://wa.me/" target="_blank">
-        Falar connosco
-    </a>
-</section>
-
-<footer>
-    © 2026 Central do Bisno — Todos os direitos reservados.
-</footer>
+  </footer>
 
 </body>
 </html>
